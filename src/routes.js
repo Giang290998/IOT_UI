@@ -15,6 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+import ChartRealTime from "views/ChartRealTime";
 import Dashboard from "views/Dashboard.js";
 import Icons from "views/Icons.js";
 import Map from "views/Map.js";
@@ -27,67 +28,67 @@ import UserProfile from "views/UserProfile.js";
 var routes = [
   {
     path: "/dashboard",
-    name: "Dashboard",
+    name: "Dữ liệu hiện tại",
     rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-chart-pie-36",
-    component: <Dashboard />,
+    icon: "fa-solid fa-clock",
+    component: <ChartRealTime />,
     layout: "/admin",
   },
   {
     path: "/icons",
-    name: "Icons",
+    name: "Reports",
     rtlName: "الرموز",
-    icon: "tim-icons icon-atom",
-    component: <Icons />,
+    icon: "fa-regular fa-newspaper",
+    component: <Dashboard />,
     layout: "/admin",
   },
-  {
-    path: "/map",
-    name: "Map",
-    rtlName: "خرائط",
-    icon: "tim-icons icon-pin",
-    component: <Map />,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/map",
+  //   name: "Map",
+  //   rtlName: "خرائط",
+  //   icon: "tim-icons icon-pin",
+  //   component: <Map />,
+  //   layout: "/admin",
+  // },
   {
     path: "/notifications",
-    name: "Notifications",
+    name: "Alarm",
     rtlName: "إخطارات",
-    icon: "tim-icons icon-bell-55",
+    icon: "fa-solid fa-bell",
     component: <Notifications />,
     layout: "/admin",
   },
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "Quản lý nhân sự",
     rtlName: "ملف تعريفي للمستخدم",
-    icon: "tim-icons icon-single-02",
+    icon: "fa-solid fa-user",
     component: <UserProfile />,
     layout: "/admin",
   },
-  {
-    path: "/tables",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "tim-icons icon-puzzle-10",
-    component: <TableList />,
-    layout: "/admin",
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    rtlName: "طباعة",
-    icon: "tim-icons icon-align-center",
-    component: <Typography />,
-    layout: "/admin",
-  },
-  {
-    path: "/rtl-support",
-    name: "RTL Support",
-    rtlName: "ار تي ال",
-    icon: "tim-icons icon-world",
-    component: <Rtl />,
-    layout: "/rtl",
-  },
+  // {
+  //   path: "/tables",
+  //   name: "Table List",
+  //   rtlName: "قائمة الجدول",
+  //   icon: "tim-icons icon-puzzle-10",
+  //   component: <TableList />,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/typography",
+  //   name: "Typography",
+  //   rtlName: "طباعة",
+  //   icon: "tim-icons icon-align-center",
+  //   component: <Typography />,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/rtl-support",
+  //   name: "RTL Support",
+  //   rtlName: "ار تي ال",
+  //   icon: "tim-icons icon-world",
+  //   component: <Rtl />,
+  //   layout: "/rtl",
+  // },
 ];
 export default routes;

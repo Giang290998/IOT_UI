@@ -18,7 +18,7 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Dropdown, DropdownToggle, Badge } from "reactstrap";
+import { Dropdown, DropdownToggle, Badge } from "reactstrap";
 import { ThemeContext, themes } from "contexts/ThemeContext";
 import { backgroundColors } from "contexts/BackgroundColorContext";
 
@@ -30,7 +30,7 @@ function FixedPlugin(props) {
   return (
     <div className="fixed-plugin">
       <Dropdown isOpen={dropDownIsOpen} toggle={handleClick}>
-        <DropdownToggle tag="div">
+        <DropdownToggle tag="div" style={{position:'fixed', top: '10vh'}}>
           <i className="fa fa-cog fa-2x" />
         </DropdownToggle>
         <ul className="dropdown-menu show">
@@ -84,7 +84,7 @@ function FixedPlugin(props) {
               )}
             </ThemeContext.Consumer>
           </li>
-          <li className="button-container">
+          {/* <li className="button-container">
             <Button
               href="https://www.creative-tim.com/product/black-dashboard-react"
               color="primary"
@@ -114,7 +114,7 @@ function FixedPlugin(props) {
             >
               Get pro version
             </Button>
-          </li>
+          </li> */}
         </ul>
       </Dropdown>
     </div>

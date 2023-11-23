@@ -49,23 +49,29 @@ import {
   chartExample3,
   chartExample4,
 } from "variables/charts.js";
+import signalRService from "helper/signalR";
 
 function Dashboard(props) {
   const [bigChartData, setbigChartData] = React.useState("data1");
+
   const setBgChartData = (name) => {
     setbigChartData(name);
   };
+
+  setTimeout(() => {signalRService.sendTestMessage("Giang cu toooo.");}, 1)
+  
+
   return (
     <>
       <div className="content">
-        <Row>
+        {/*<Row>
           <Col xs="12">
             <Card className="card-chart">
               <CardHeader>
                 <Row>
                   <Col className="text-left" sm="6">
-                    <h5 className="card-category">Total Shipments</h5>
-                    <CardTitle tag="h2">Performance</CardTitle>
+                    /* <h5 className="card-category">Total Shipments</h5>
+                    <CardTitle tag="h4">Temperature</CardTitle>
                   </Col>
                   <Col sm="6">
                     <ButtonGroup
@@ -137,14 +143,15 @@ function Dashboard(props) {
               </CardBody>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
-          <Col lg="4">
+          <Col lg="12">
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">Total Shipments</h5>
+                <h5 className="card-category">Nhiệt độ</h5>
                 <CardTitle tag="h3">
-                  <i className="tim-icons icon-bell-55 text-info" /> 763,215
+                  {/* <i className="tim-icons icon-bell-55 text-info" /> 763,215 */}
+                  <i class="fa-solid fa-temperature-three-quarters text-info" /> 28 °C   
                 </CardTitle>
               </CardHeader>
               <CardBody>
@@ -157,13 +164,16 @@ function Dashboard(props) {
               </CardBody>
             </Card>
           </Col>
-          <Col lg="4">
+        </Row>
+        <Row>
+          <Col lg="12">
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">Daily Sales</h5>
+                <h5 className="card-category">pH</h5>
                 <CardTitle tag="h3">
-                  <i className="tim-icons icon-delivery-fast text-primary" />{" "}
-                  3,500€
+                  {/* <i className="tim-icons icon-delivery-fast text-primary" />{" "} */}
+                  <i class="fa-solid fa-wand-magic-sparkles text-primary" />{" "}
+                  7.1
                 </CardTitle>
               </CardHeader>
               <CardBody>
@@ -176,12 +186,34 @@ function Dashboard(props) {
               </CardBody>
             </Card>
           </Col>
-          <Col lg="4">
+          {/* <Col lg="4">
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">Completed Tasks</h5>
+                <h5 className="card-category">Nồng độ chất tan</h5>
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-send text-success" /> 12,100K
+                  <i class="fa-solid fa-flask-vial text-success" /> 999 ppm
+                </CardTitle>
+              </CardHeader>
+              <CardBody>
+                <div className="chart-area">
+                  <Line
+                    data={chartExample4.data}
+                    options={chartExample4.options}
+                  />
+                </div>
+              </CardBody>
+            </Card>
+          </Col> */}
+        </Row>
+        <Row>
+          <Col lg="12">
+            <Card className="card-chart">
+              <CardHeader>
+                <h5 className="card-category">Nồng độ chất tan</h5>
+                <CardTitle tag="h3">
+                  {/* <i className="tim-icons icon-send text-success" /> 12,100K */}
+                  <i class="fa-solid fa-flask-vial text-success" /> 999 ppm
                 </CardTitle>
               </CardHeader>
               <CardBody>
@@ -196,6 +228,27 @@ function Dashboard(props) {
           </Col>
         </Row>
         <Row>
+          <Col lg="12">
+            <Card className="card-chart">
+              <CardHeader>
+                <h5 className="card-category">Mực nước bồn</h5>
+                <CardTitle tag="h3">
+                  {/* <i className="tim-icons icon-send text-success" /> 12,100K */}
+                  <i class="fa-solid fa-droplet text-info" /> 50 % (99 lít)
+                </CardTitle>
+              </CardHeader>
+              <CardBody>
+                <div className="chart-area">
+                  <Line
+                    data={chartExample4.data}
+                    options={chartExample4.options}
+                  />
+                </div>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+        {/* <Row>
           <Col lg="6" md="12">
             <Card className="card-tasks">
               <CardHeader>
@@ -526,7 +579,7 @@ function Dashboard(props) {
               </CardBody>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
       </div>
     </>
   );

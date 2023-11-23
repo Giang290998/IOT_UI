@@ -27,31 +27,26 @@ function Footer() {
       <Container fluid>
         <Nav>
           <NavItem>
+            <h4>ABOUT US : </h4>
+          </NavItem>
+          <NavItem>
             <NavLink href="https://www.creative-tim.com/?ref=bdr-user-archive-footer">
-              Creative Tim
+              <i class="fa-brands fa-facebook"></i>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="https://www.creative-tim.com/presentation?ref=bdr-user-archive-footer">
-              About Us
+              <i class="fa-brands fa-youtube"></i>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="https://www.creative-tim.com/blog?ref=bdr-user-archive-footer">
-              Blog
+              <i class="fa-brands fa-tiktok"></i>
             </NavLink>
           </NavItem>
         </Nav>
         <div className="copyright">
-          © {new Date().getFullYear()} made with{" "}
-          <i className="tim-icons icon-heart-2" /> by{" "}
-          <a
-            href="https://www.creative-tim.com/?ref=bdr-user-archive-footer"
-            target="_blank"
-          >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+          <h4>Smart-IOT © {new Date().getFullYear()}</h4>
         </div>
       </Container>
     </footer>

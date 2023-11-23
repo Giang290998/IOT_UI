@@ -36,6 +36,9 @@ var ps;
 function Sidebar(props) {
   const location = useLocation();
   const sidebarRef = React.useRef(null);
+
+
+
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return location.pathname === routeName ? "active" : "";
@@ -112,12 +115,12 @@ function Sidebar(props) {
       {({ color }) => (
         <div className="sidebar" data={color}>
           <div className="sidebar-wrapper" ref={sidebarRef}>
-            {logoImg !== null || logoText !== null ? (
+            {/* {logoImg !== null || logoText !== null ? (
               <div className="logo">
                 {logoImg}
                 {logoText}
               </div>
-            ) : null}
+            ) : null} */}
             <Nav>
               {routes.map((prop, key) => {
                 if (prop.redirect) return null;
@@ -132,19 +135,20 @@ function Sidebar(props) {
                       to={prop.layout + prop.path}
                       className="nav-link"
                       onClick={props.toggleSidebar}
+                      style={{}}
                     >
-                      <i className={prop.icon} />
-                      <p>{rtlActive ? prop.rtlName : prop.name}</p>
+                      <i className={prop.icon} style={{fontSize: '22px'}}/>
+                      <p style={{fontSize: '14px', fontWeight: 'bold'}}>{rtlActive ? prop.rtlName : prop.name}</p>
                     </NavLink>
                   </li>
                 );
               })}
-              <li className="active-pro">
+              {/* <li className="active-pro">
                 <ReactstrapNavLink href="https://www.creative-tim.com/product/black-dashboard-pro-react?ref=bdr-user-archive-sidebar-upgrade-pro">
                   <i className="tim-icons icon-spaceship" />
                   <p>Upgrade to PRO</p>
                 </ReactstrapNavLink>
-              </li>
+              </li> */}
             </Nav>
           </div>
         </div>
